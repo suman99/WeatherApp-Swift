@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="TrebuchetMS.ttf">
+            <string>TrebuchetMS</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="WeatherTron" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZC-Ih-zop">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.39790385100544645" green="0.56882788017025487" blue="0.84261149168014526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZ2-6a-Ulh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="h4V-VB-xEI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HNn-3U-Q3Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="190.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjS-Pl-M5b">
+                                                    <rect key="frame" x="173" y="0.0" width="29.5" height="190.5"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="40"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nvp-9c-1NP">
+                                            <rect key="frame" x="0.0" y="190.5" width="375" height="476.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="BYZ-38-t0r" id="m0o-0H-Bcn"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Nvp-9c-1NP" firstAttribute="leading" secondItem="h4V-VB-xEI" secondAttribute="leading" id="1bz-jt-97d"/>
+                                        <constraint firstAttribute="trailing" secondItem="HNn-3U-Q3Z" secondAttribute="trailing" id="Arb-iS-DHP"/>
+                                        <constraint firstItem="HNn-3U-Q3Z" firstAttribute="top" secondItem="h4V-VB-xEI" secondAttribute="top" id="IEu-sa-Id8"/>
+                                        <constraint firstAttribute="bottom" secondItem="Nvp-9c-1NP" secondAttribute="bottom" id="LLN-bd-9p4"/>
+                                        <constraint firstAttribute="trailing" secondItem="Nvp-9c-1NP" secondAttribute="trailing" id="YJw-F2-Nix"/>
+                                        <constraint firstItem="Nvp-9c-1NP" firstAttribute="top" secondItem="HNn-3U-Q3Z" secondAttribute="bottom" id="rBn-by-5QP"/>
+                                        <constraint firstItem="HNn-3U-Q3Z" firstAttribute="leading" secondItem="h4V-VB-xEI" secondAttribute="leading" id="urZ-BN-MNz"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZZC-Ih-zop" secondAttribute="trailing" id="7f4-CY-0nw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aZ2-6a-Ulh" secondAttribute="bottom" id="Bum-Dd-Mgd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZZC-Ih-zop" secondAttribute="bottom" id="HAX-Na-pbp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aZ2-6a-Ulh" secondAttribute="trailing" id="Jmb-0P-iSG"/>
+                            <constraint firstItem="aZ2-6a-Ulh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XZq-72-lvU"/>
+                            <constraint firstItem="ZZC-Ih-zop" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bdR-2B-Qvy"/>
+                            <constraint firstItem="ZZC-Ih-zop" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r4k-8C-Qoo"/>
+                            <constraint firstItem="HNn-3U-Q3Z" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:3.5" id="xQt-K7-Zal"/>
+                            <constraint firstItem="aZ2-6a-Ulh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="yOp-sw-ptW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityName" destination="HjS-Pl-M5b" id="HiL-8L-0go"/>
+                        <outlet property="forecastTableView" destination="Nvp-9c-1NP" id="zQx-3h-52Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="41.829085457271368"/>
+        </scene>
+    </scenes>
+</document>

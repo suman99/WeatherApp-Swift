@@ -1,0 +1,6 @@
+framework module Pods_WeatherTron {
+  umbrella header "Pods-WeatherTron-umbrella.h"
+
+  export *
+  module * { export * }
+}
