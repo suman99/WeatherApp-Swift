@@ -19,10 +19,15 @@ DEPENDENCIES:
   - PromiseKit (~> 4.4)
   - PromiseKit/CoreLocation
 
+SPEC REPOS:
+  trunk:
+    - JGProgressHUD
+    - PromiseKit
+
 SPEC CHECKSUMS:
   JGProgressHUD: c402c0f41fc291ca7e33bba2f999118d9682dd9c
   PromiseKit: 9c1d9f6d7b65e3951a90bea7f407c56972be5d8e
 
 PODFILE CHECKSUM: 98c25c73a31f191be651fc4bf960bb739e815fef
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.9.3

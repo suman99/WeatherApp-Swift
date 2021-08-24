@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupView() {
-        forecastTableView.rowHeight = UITableViewAutomaticDimension
+        forecastTableView.rowHeight = UITableView.automaticDimension
         forecastTableView.rowHeight = 120
         forecastTableView.register(UINib.init(nibName: NibFile.dayTableViewCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.dayTableViewCell)
         NotificationCenter.default.addObserver(self, selector: #selector(loadForecastData), name: NSNotification.Name(rawValue: "updateForecastData"), object: nil)
