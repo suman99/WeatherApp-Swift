@@ -13,7 +13,17 @@ import JGProgressHUD
 class ForecastViewModel: NSObject {
     
     var location: String
-    var daysForecast: [DayViewModel]
+    
+    // Closure use for notification
+    var reloadList = { () -> () in }
+    
+    var daysForecast: [DayViewModel] = [] {
+        //Reload data when data set
+        didSet{
+            reloadList()
+        }
+    }
+    
     var hud: JGProgressHUD!
     
     override init() {
@@ -22,17 +32,16 @@ class ForecastViewModel: NSObject {
         super.init()
         
         showLoadingIndicator()
+        
         self.getCurrentLocation().then{ coord -> Void in
-            self.fetchWeatherForecastDetails(latitude: coord.latitude, longitude: coord.longitude).then
-                { model -> Void in
-                    self.daysForecast = model
-                }.always {
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateForecastData"), object: nil, userInfo: nil)
+        self.fetchWeatherForecastDetails(latitude: coord.latitude, longitude: coord.longitude)
+            .then { model -> Void in
+                self.daysForecast = model
             }
-            }.always {
-                self.dismissLoadingIndicator()
-            }.catch { (error) in
-                print(error.localizedDescription)
+        }.always {
+            self.dismissLoadingIndicator()
+        }.catch { (error) in
+            print(error.localizedDescription)
         }
     }
 }

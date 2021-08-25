@@ -17,21 +17,25 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = ForecastViewModel()
         self.setupView()
+        viewModel = ForecastViewModel()
+        loadForecastDataOnView()
     }
     
     private func setupView() {
         forecastTableView.rowHeight = UITableView.automaticDimension
         forecastTableView.rowHeight = 120
         forecastTableView.register(UINib.init(nibName: NibFile.dayTableViewCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.dayTableViewCell)
-        NotificationCenter.default.addObserver(self, selector: #selector(loadForecastData), name: NSNotification.Name(rawValue: "updateForecastData"), object: nil)
     }
     
-    @objc func loadForecastData() {
-        cityName.text = viewModel?.location
-        self.forecastTableView.reloadData()
+    @objc func loadForecastDataOnView() {
+        viewModel?.reloadList = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.cityName.text = self?.viewModel?.location
+                self?.forecastTableView.reloadData()
+            }
+        }
+
     }
 }
 
