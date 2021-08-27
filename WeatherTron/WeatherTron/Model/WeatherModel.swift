@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeatherModel: NSObject {
+struct WeatherModel {
     
     var temperature: Double
     var weatherCondition: String

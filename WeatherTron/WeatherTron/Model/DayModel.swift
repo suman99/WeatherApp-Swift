@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DayModel: NSObject {
+struct DayModel {
     
     var forecastDate: String
     var forecastTime: String
