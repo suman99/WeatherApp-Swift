@@ -1,10 +1,10 @@
-# WeatherApp-Swift4
+# WeatherApp-Swift5
 
-Weahter App with Swift4 & iOS 11
+Weahter App with Swift5 
 
 #Requirements 
 
-Xcode 9.2 macOS 10.13.2
+Xcode 12.4
 
 #Features :
 
@@ -16,12 +16,12 @@ Displaying the weather forecast based on the current location.
 
 1. Used Weather API's
 2. Used MVVM pattern coding.
-3. Used Swift 4
+3. Used Swift 5
 4. Used Promisekit
 
 #Developer Setup :
 
-Download the project and run it with Xcode 9.2 
+Download the project and run it with Xcode 12.4 
 
 #Run and Build the App:
 
